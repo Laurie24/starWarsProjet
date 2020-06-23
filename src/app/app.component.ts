@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {LoggeurService} from './services/loggeur.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sWars';
+  todayDate = new Date();
+  developpeuse = 'Laurie Villeneuve';
+  constructor() {
+  }
 }

@@ -1,0 +1,12 @@
+.navbar{
+  background-color: black;
+  color: white;
+  text-align: center !important;
+}
+
+.navbar a{
+  color: #edc472;
+  border: 2px solid #edc472;
+  border-radius: 1px;
+  margin: 5px;
+}

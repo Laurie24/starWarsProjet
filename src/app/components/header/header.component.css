@@ -1,0 +1,9 @@
+img{
+  width: 350px;
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+
+}

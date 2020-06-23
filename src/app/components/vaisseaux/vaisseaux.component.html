@@ -1,0 +1,28 @@
+<h1>Mes vaisseaux</h1>
+<div class="container">
+  <a routerLink="/vaisseaux/add">Ajouter un vaisseau</a>
+  <table class="table">
+    <thead>
+    <th>Photo</th>
+    <th>Nom</th>
+    <th>Model</th>
+    <th>Plus rapide que la lumière</th>
+    <th>Nombre de passagers</th>
+    <th>Action</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let vaisseau of this.vaisseaux">
+      <td><img src="assets/images/{{ vaisseau.photo }}" width="350px"></td>
+      <td>{{ vaisseau.nom }}</td>
+      <td>{{ vaisseau.dimension }}</td>
+      <td>{{ vaisseau.lightSpeed?'oui':'non' }}</td>
+      <td>{{ vaisseau.nbPassenger }}</td>
+      <td><a [routerLink]="['/vaisseaux', vaisseau.id]">Voir le détail du vaisseau</a><br><br>
+        <a [routerLink]="['/vaisseaux/update', vaisseau.id]">Editer le vaisseau</a><br><br>
+        <a style="color: #edc472; cursor: pointer" (click)="deleteVaisseau(vaisseau)">Supprimer le vaisseau {{vaisseau.nom}}</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+

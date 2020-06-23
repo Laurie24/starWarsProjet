@@ -1,0 +1,56 @@
+<h1>Ajouter un vaisseau</h1>
+<div class="container">
+  <form #vaisseauForm="ngForm" (ngSubmit)="submitVaisseau()">
+    <label for="id">Id du vaisseau</label>
+    <input type="number" class="form-control" id="id" name="id" required [(ngModel)]="vehicul.id" #id="ngModel">
+    <div [hidden]="id.valid"
+         class="alert alert-danger">
+      Veuillez saisir l'ID
+    </div>
+
+    <label for="nom">Nom du vaisseau</label>
+    <input type="text" class="form-control" id="nom" name="nom" required [(ngModel)]="vehicul.nom" #nom="ngModel">
+    <div [hidden]="nom.valid"
+         class="alert alert-danger">
+      Non invalide
+    </div>
+
+    <label for="dimension">Dimension du vaisseau</label>
+    <input type="text" class="form-control" id="dimension" name="dimension"  [(ngModel)]="vehicul.dimension" #dimension="ngModel">
+    <div [hidden]="dimension.valid"
+         class="alert alert-danger">
+      Dimension invalide
+    </div>
+
+    <label for="lightSpeed">Vitesse de la lumière</label>
+    <input type="text" class="form-control" id="lightSpeed" name="lightSpeed" [(ngModel)]="vehicul.lightSpeed" #lightSpeed="ngModel">
+    <div [hidden]="lightSpeed.valid"
+         class="alert alert-danger">
+      Dimension invalide
+    </div>
+
+    <label for="nbPassenger">Nombre de passagers</label>
+    <input type="text" class="form-control" id="nbPassenger" name="nbPassenger"  [(ngModel)]="vehicul.nbPassenger" #nbPassenger="ngModel">
+    <div [hidden]="nbPassenger.valid"
+         class="alert alert-danger">
+      Photo invalide
+    </div>
+
+    <label for="description">Allegiance</label>
+    <input type="text" class="form-control" id="description" name="description" [(ngModel)]="vehicul.description" #description="ngModel">
+    <div [hidden]="description.valid"
+         class="alert alert-danger">
+      Description invalide
+    </div>
+
+    <label for="photo">Photo du vaisseau</label>
+    <input type="text" class="form-control" id="photo" name="photo"  [(ngModel)]="vehicul.photo" #photo="ngModel">
+    <div [hidden]="photo.valid"
+         class="alert alert-danger">
+      Photo invalide
+    </div>
+    <br>
+    <input [disabled]="!vaisseauForm.valid" type="submit" class="btn">
+  </form>
+
+</div>

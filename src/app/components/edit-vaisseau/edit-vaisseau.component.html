@@ -1,0 +1,43 @@
+<h1>Editer un vaisseau</h1>
+<div class="container">
+  <form #vaisseauForm="ngForm" (ngSubmit)="editVaisseau()">
+
+    <label for="nom">Nom du vaisseau</label>
+    <input type="text" class="form-control" id="nom" name="nom" required [(ngModel)]="vaisseau.nom" #nom="ngModel">
+    <div [hidden]="nom.valid"
+         class="alert alert-danger">
+      Non invalide
+    </div>
+
+    <label for="dimension">Dimension du vaisseau</label>
+    <input type="text" class="form-control" id="dimension" name="dimension"  [(ngModel)]="vaisseau.dimension" #dimension="ngModel">
+    <div [hidden]="dimension.valid"
+         class="alert alert-danger">
+      Dimension invalide
+    </div>
+
+    <label for="lightSpeed">Vitesse de la lumière</label>
+    <input type="text" class="form-control" id="lightSpeed" name="lightSpeed" [(ngModel)]="vaisseau.lightSpeed" #lightSpeed="ngModel">
+    <div [hidden]="lightSpeed.valid"
+         class="alert alert-danger">
+      Dimension invalide
+    </div>
+
+    <label for="nbPassenger">Nombre de passagers</label>
+    <input type="text" class="form-control" id="nbPassenger" name="nbPassenger"  [(ngModel)]="vaisseau.nbPassenger" #nbPassenger="ngModel">
+    <div [hidden]="nbPassenger.valid"
+         class="alert alert-danger">
+      Photo invalide
+    </div>
+
+    <label for="photo">Photo du vaisseau</label>
+    <input type="text" class="form-control" id="photo" name="photo"  [(ngModel)]="vaisseau.photo" #photo="ngModel">
+    <div [hidden]="photo.valid"
+         class="alert alert-danger">
+      Photo invalide
+    </div>
+    <br>
+    <input [disabled]="!vaisseauForm.valid" type="submit" class="btn">
+  </form>
+
+</div>

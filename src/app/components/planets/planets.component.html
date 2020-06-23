@@ -1,0 +1,31 @@
+<h1>Mes planètes </h1>
+<div class="container">
+  <a routerLink="/planets/add">Ajouter une planète</a>
+  <table class="table">
+    <thead>
+    <th>Photo</th>
+    <th>Nom</th>
+    <th>Nombre d'habitant</th>
+    <th>Allegiance</th>
+    <th>Nombre de km depuis la terre</th>
+    <th>Action</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let planet of this.planets">
+      <td><img src="assets/images/{{planet.photo}}" width="350px"></td>
+      <td>{{ planet.nom }}</td>
+      <td>{{ planet.nbHabitant }}</td>
+      <td>{{ planet.allegiance }}</td>
+      <td>{{ planet.nbKmTerre }}</td>
+      <td><a [routerLink]="['/planets', planet.id]" >Voir le détail de la planète {{ planet.nom }}</a><br><br>
+        <a [routerLink]="['/planets/update', planet.id]" >Editer la planète {{ planet.nom }}</a><br><br>
+        <a style="color: #edc472; cursor: pointer" (click)="deletePlanete(planet)">Supprimer la planète {{planet.nom}}</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+

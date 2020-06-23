@@ -1,0 +1,20 @@
+label{
+  color: #edc472;
+}
+
+.btn{
+  background-color: #edc472;
+}
+
+.container{
+  padding: 5rem;
+  border-radius: 1rem;
+  border: #edc472 2px solid;
+  margin-bottom: 10rem;
+  width: 50rem;
+}
+
+input {
+  background-color: black;
+  border: solid .5px #edc472;
+}
