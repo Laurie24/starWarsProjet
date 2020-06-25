@@ -1,61 +1,59 @@
-<h1>Ajouter une planète</h1>
-<div class="container">
-  <form #planetForm="ngForm" (ngSubmit)="submitPlanet()">
-    <label for="id">Id de la planète</label>
-    <input type="number" class="form-control" id="id" name="id" required [(ngModel)]="planet.id" #id="ngModel">
-    <div [hidden]="id.valid"
-         class="alert alert-danger">
-      Veuillez saisir l'ID
-    </div>
+
+  <h1>Ajouter une planète</h1>
+  <div class="container">
+    <form #planetForm="ngForm" (ngSubmit)="submitPlanet()">
+
+      <label for="nom">Nom de la planète</label>
+      <input type="text" class="form-control" id="nom" name="nom" required [(ngModel)]="planet.nom" #nom="ngModel">
+      <div [hidden]="nom.valid"
+           class="alert alert-danger">
+        Nom invalide
+      </div>
 
 
-    <label for="nom">Nom de la planète</label>
-    <input type="text" class="form-control" id="nom" name="nom" required [(ngModel)]="planet.nom" #nom="ngModel">
-    <div [hidden]="nom.valid"
-         class="alert alert-danger">
-      Nom invalide
-    </div>
+      <label for="nbHabitant">Nombre d'habitants sur la planète</label>
+      <input type="number" class="form-control" id="nbHabitant" name="nbHabitant" [(ngModel)]="planet.nbHabitant" #nbHabitant="ngModel">
+      <div [hidden]="nbHabitant.valid"
+           class="alert alert-danger">
+        Nombre d'habitant invalide
+      </div>
 
 
-    <label for="nbHabitant">Nombre d'habitants sur la planète</label>
-    <input type="number" class="form-control" id="nbHabitant" name="nbHabitant" [(ngModel)]="planet.nbHabitant" #nbHabitant="ngModel">
-    <div [hidden]="nbHabitant.valid"
-         class="alert alert-danger">
-      Nombre d'habitant invalide
-    </div>
+      <label for="distanceTerre">Distance de la Terre</label>
+      <input type="number" class="form-control" id="distanceTerre" name="distanceTerre"  [(ngModel)]="planet.nbKmTerre" #nbKmTerre="ngModel">
+      <div [hidden]="nbKmTerre.valid"
+           class="alert alert-danger">
+        Distance de la terre invalide
+      </div>
 
 
-    <label for="distanceTerre">Distance de la Terre</label>
-    <input type="number" class="form-control" id="distanceTerre" name="distanceTerre"  [(ngModel)]="planet.nbKmTerre" #nbKmTerre="ngModel">
-    <div [hidden]="nbKmTerre.valid"
-         class="alert alert-danger">
-      Distance de la terre invalide
-    </div>
+      <label for="allegiance">Allegiance</label>
+      <input type="text" class="form-control" id="allegiance" name="allegiance" [(ngModel)]="planet.allegiance" #allegiance="ngModel">
+      <div [hidden]="allegiance.valid"
+           class="alert alert-danger">
+        Allegiance invalide
+      </div>
+
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description" name="description" [(ngModel)]="planet.description" #description="ngModel">
+      <div [hidden]="description.valid"
+           class="alert alert-danger">
+        Description invalide
+      </div>
 
 
-    <label for="allegiance">Allegiance</label>
-    <input type="text" class="form-control" id="allegiance" name="allegiance" [(ngModel)]="planet.allegiance" #allegiance="ngModel">
-    <div [hidden]="allegiance.valid"
-         class="alert alert-danger">
-      Allegiance invalide
-    </div>
-
-    <label for="description">Description</label>
-    <input type="text" class="form-control" id="description" name="description" [(ngModel)]="planet.description" #description="ngModel">
-    <div [hidden]="description.valid"
-         class="alert alert-danger">
-      Description invalide
-    </div>
+      <label for="photo">Photo de la planète</label>
+      <input type="text" class="form-control" id="photo" name="photo"  [(ngModel)]="planet.photo" #photo="ngModel">
+      <div [hidden]="photo.valid"
+           class="alert alert-danger">
+        Photo invalide
+      </div>
+      <br>
+      <input  [disabled]="!planetForm.valid" type="submit" class="btn">
+    </form>
+  </div>
 
 
-    <label for="photo">Photo de la planète</label>
-    <input type="text" class="form-control" id="photo" name="photo"  [(ngModel)]="planet.photo" #photo="ngModel">
-    <div [hidden]="photo.valid"
-         class="alert alert-danger">
-      Photo invalide
-    </div>
-    <br>
-    <input  [disabled]="!planetForm.valid" type="submit" class="btn">
-  </form>
-</div>
+
+
 

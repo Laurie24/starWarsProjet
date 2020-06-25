@@ -1,13 +1,6 @@
 <h1>Ajouter un vaisseau</h1>
 <div class="container">
   <form #vaisseauForm="ngForm" (ngSubmit)="submitVaisseau()">
-    <label for="id">Id du vaisseau</label>
-    <input type="number" class="form-control" id="id" name="id" required [(ngModel)]="vehicul.id" #id="ngModel">
-    <div [hidden]="id.valid"
-         class="alert alert-danger">
-      Veuillez saisir l'ID
-    </div>
-
     <label for="nom">Nom du vaisseau</label>
     <input type="text" class="form-control" id="nom" name="nom" required [(ngModel)]="vehicul.nom" #nom="ngModel">
     <div [hidden]="nom.valid"
@@ -36,7 +29,7 @@
       Photo invalide
     </div>
 
-    <label for="description">Allegiance</label>
+    <label for="description">Description</label>
     <input type="text" class="form-control" id="description" name="description" [(ngModel)]="vehicul.description" #description="ngModel">
     <div [hidden]="description.valid"
          class="alert alert-danger">

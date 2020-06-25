@@ -12,13 +12,23 @@ import {ToastrService} from 'ngx-toastr';
 export class VaisseauxComponent implements OnInit {
   vaisseaux: Vaisseau[];
   constructor(private vaisseauService: VaisseauService, private toastr: ToastrService) { }
-
+  isLoading: boolean;
   ngOnInit(): void {
-    this.vaisseaux = this.vaisseauService.getAllVehiculs();
+    this.isLoading = true;
+    this.vaisseauService.getAllVehiculs().subscribe((data: Vaisseau[]) => {
+      this.vaisseaux = data;
+      this.isLoading = false;
+    });
   }
   deleteVaisseau(vaisseau: Vaisseau){
-    this.vaisseaux = this.vaisseauService.deleteVaisseau(vaisseau);
-    this.toastr.success('Le vaisseau a bien été supprimée!', 'Succès!');
+    this.isLoading = true;
+    this.vaisseauService.deleteVaisseau(vaisseau.id).subscribe(data => {
+      this.vaisseauService.getAllVehiculs().subscribe(newDataPlanet => {
+        this.vaisseaux = newDataPlanet;
+        this.isLoading = false;
+        this.toastr.success('Le vaisseau a bien été supprimé!', 'Succès!');
+      });
+    });
   }
 
 }

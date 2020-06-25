@@ -12,14 +12,24 @@ import {LoggeurService} from '../../services/loggeur.service';
 export class PlanetsComponent implements OnInit {
   planets: Planet[];
   constructor(private planetService: PlanetService, private toastr: ToastrService, private loggeurService: LoggeurService) { }
-
+  isLoading: boolean;
   ngOnInit(): void {
-    this.planets = this.planetService.getAllPlanets();
-    this.loggeurService.consoleLoader();
+    this.isLoading = true;
+    this.planetService.getAllPlanets().subscribe((data: Planet[]) => {
+      this.planets = data;
+      this.isLoading = false;
+      this.loggeurService.consoleLoader();
+    });
   }
   deletePlanete(planete: Planet){
-    this.planets = this.planetService.deletePlanete(planete);
-    this.toastr.success('La planète a bien été supprimée!', 'Succès!');
+    this.isLoading = true;
+    this.planetService.deletePlanete(planete.id).subscribe(data => {
+      this.planetService.getAllPlanets().subscribe(newDataPlanet => {
+        this.planets = newDataPlanet;
+        this.isLoading = false;
+        this.toastr.success('La planète a bien été supprimée!', 'Succès!');
+      });
+    });
   }
 
 

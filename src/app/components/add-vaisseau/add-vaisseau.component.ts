@@ -11,6 +11,8 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class AddVaisseauComponent implements OnInit {
   vehicul: Vaisseau;
+  isLoading: boolean;
+
   constructor(private vaisseauService: VaisseauService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
@@ -18,8 +20,11 @@ export class AddVaisseauComponent implements OnInit {
   }
 
   submitVaisseau(): void{
-    this.vaisseauService.addVaisseau(this.vehicul);
-    this.router.navigate(['/vaisseaux']);
-    this.toastr.success('Le vaisseau a bien été ajoutée!', 'Succès!');
+    this.isLoading = true;
+    this.vaisseauService.addVaisseau(this.vehicul).subscribe(then => {
+      this.isLoading = false;
+      this.router.navigate(['/vaisseaux']);
+      this.toastr.success('Le vaisseau a bien été ajoutée!', 'Succès!');
+    });
 }
 }

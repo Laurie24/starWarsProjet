@@ -1,4 +1,33 @@
 <h1>Mes planètes </h1>
+<div class="add">
+  <a class="btn" routerLink="/planets/add">Ajouter une planète</a>
+</div>
+
+<div *ngIf="!isLoading" class="liste row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+  <div *ngFor="let planet of this.planets" class="card" style="width: 25rem;">
+    <a [routerLink]="['/planet', planet.id]"> <img src='../../../assets/images/{{planet.photo}}' class="card-img-top" alt=""></a>
+    <div class="card-body">
+      <h4>{{planet.nom}}</h4>
+      <p class="card-text"><span class="font-weight-bold">Nombre d'habitant :</span> {{planet.nbHabitant}} </p>
+      <p class="card-text"><span class="font-weight-bold"> Allegiance :</span> {{planet.allegiance}} </p>
+      <p class="card-text"><span class="font-weight-bold"> Distance de la Terre :</span> {{planet.nbKmTerre}} </p>
+      <hr>
+      <a class="btn" [routerLink]="['/planets', planet.id]">Détails de la planète</a>
+      <br>
+      <a class="btn" style="color: #edc472; cursor: pointer" (click)="deletePlanete(planet)">Supprimer {{planet.nom}}</a>
+      <br>
+      <a class="btn" [routerLink]="['/planets/update', planet.id]">Modifier {{planet.nom}} </a>
+    </div>
+  </div>
+</div>
+<div *ngIf="isLoading">
+  <div class="fa-3x">
+    <i class="fas fa-spinner fa-spin"></i>
+  </div>
+</div>
+
+
+<!--####################### Avec un tableau
 <div class="container">
   <a routerLink="/planets/add">Ajouter une planète</a>
   <table class="table">
@@ -23,7 +52,7 @@
     </tr>
     </tbody>
   </table>
-</div>
+</div> -->
 
 
 

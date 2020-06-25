@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Vaisseau} from '../../models/vaisseau';
 import {VaisseauService} from '../../services/vaisseau.service';
+import {Planet} from '../../models/planet';
 
 @Component({
   selector: 'app-vaisseau-detail',
@@ -11,11 +12,15 @@ import {VaisseauService} from '../../services/vaisseau.service';
 export class VaisseauDetailComponent implements OnInit {
   id: number;
   vehicul: Vaisseau;
+  isLoading: boolean;
   constructor(private route: ActivatedRoute, private  vehiculService: VaisseauService) { }
 
   ngOnInit(): void {
-    this.id = +this.route.snapshot.paramMap.get('id');
-    this.vehicul = this.vehiculService.getOneVehiculById(this.id);
+    this.isLoading = true;
+    this.vehiculService.getOneVehiculById(+this.route.snapshot.paramMap.get('id')).subscribe((data: Vaisseau) => {
+      this.vehicul = data;
+      this.isLoading = false;
+    });
   }
 
 }

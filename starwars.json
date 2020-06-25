@@ -1,0 +1,114 @@
+{
+  "planet": [
+    {
+      "id": 1,
+      "photo": "alderaan.jpeg",
+      "nom": "Alderaan",
+      "nbHabitant": 65394,
+      "allegiance": "Galactic Empire",
+      "nbKmTerre": "342985",
+      "description": "If ever one needed an example of the irredeemable evil that was the Empire, turn to the shattered remains of Alderaan. An influential world, Alderaan was represented in the waning days of the Republic by such venerated politicians as Bail Antilles and Bail Organa. A peaceful world, Alderaan was bereft of weaponry in an era of galactic strife. It was not without spirit, however. Alderaan was one of the earliest supporters of the Alliance to Restore the Republic, though its officials prudently kept all ties to the Rebellion secret. Despite such discretion, the Empire knew it to be a haven of Rebel activity, and Grand Moff Tarkin targeted the beautiful world for reprisal as soon as the Death Star was operational. The massive primary weapon of the battle station obliterated Alderaan, leaving only a lifeless asteroid field behind."
+    },
+    {
+      "photo": "tatooine.jpeg",
+      "nom": "Tatooine",
+      "nbHabitant": "3715",
+      "allegiance": "Hutt Clan",
+      "nbKmTerre": "9885",
+      "description": "A harsh desert world orbiting twin suns in the galaxy’s Outer Rim, Tatooine is a lawless place ruled by Hutt gangsters. Many settlers scratch out a living on moisture farms, while spaceport cities such as Mos Eisley and Mos Espa serve as home base for smugglers, criminals, and other rogues. Tatooine’s many dangers include sandstorms, bands of savage Tusken Raiders, and carnivorous krayt dragons. The planet is also known for its dangerous Podraces, rampant gambling, and legalized slavery. Anakin Skywalker and Luke Skywalker both grew up on Tatooine, and Obi-Wan Kenobi spent years in hiding on this desolate world.",
+      "id": 3
+    },
+    {
+      "photo": "force.JPG",
+      "nom": "Force Planet",
+      "nbHabitant": "560",
+      "allegiance": "Force Priestesses",
+      "nbKmTerre": 734,
+      "description": "Not marked on any star map and not recognized with any specific name, the Force planet is a mystical world and the foundation of life itself. It is the birthplace of the midi-chlorians, microscopic organisms that connect the living Force to the cosmic Force. Surrounded by a bright nebula, the Force planet is a barren place, featuring only luminescent geysers that shoot energy from deep within the world. Several islands hover above the surface, each teeming with plant life and strong with the Force.",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "photo": "hoth.jpeg",
+      "nom": "Hoth",
+      "nbHabitant": 768,
+      "allegiance": "Rebel Alliance",
+      "nbKmTerre": 12845,
+      "description": "Hoth is the sixth planet in the remote system of the same name, and was the site of the Rebel Alliance's Echo Base. It is a world of snow and ice, surrounded by numerous moons, and home to deadly creatures like the wampa."
+    },
+    {
+      "id": 6,
+      "photo": "kamino.jpeg",
+      "nom": "Kamino",
+      "nbHabitant": 643,
+      "allegiance": "Galactic Republic",
+      "nbKmTerre": 957211,
+      "description": "Purged from the otherwise complete Jedi Archives is all evidence of the mysterious world of Kamino. A lonely world beyond the Outer Rim and just south of the Rishi Maze, few could have predicted that Kamino would become a key contributor to a massive shift in political power in the final days of the Republic. Kamino is a planet of endless oceans and storms. Few features mark its surface, save for massive stilt-mounted cities wherein reside the planet's natural inhabitants, the Kaminoans. From Tipoca City, the planet's Prime Minister rules. Lama Su closely monitored the operations of Kamino's most prized export: clones."
+    },
+    {
+      "id": 7,
+      "photo": "mustafar.jpeg",
+      "nom": "Mustafar",
+      "nbHabitant": 941,
+      "allegiance": "Black Sun",
+      "nbKmTerre": 6714211,
+      "description": "A tiny, fiery planet in the Outer Rim, Mustafar maintains an erratic orbit between two gas giants. Mustafar is rich in unique and valuable minerals which have long been mined by the Tech Union. Its lava pits and rivers make this planet a dangerous habitat; its natives have burly, tough bodies that can withstand extreme heat. The planet became the backdrop for the fateful duel between Obi-Wan Kenobi and Anakin Skywalker. After the rise of the Empire, captured Jedi were brought to the volcanic world for interrogation and execution."
+    }
+  ],
+  "vaisseaux": [
+    {
+      "photo": "tank.jpeg",
+      "nom": "Aat Battle Tank",
+      "dimension": "9.19m",
+      "lightSpeed": "non",
+      "nbPassenger": "14",
+      "description": "The marriage of repulsorlift technology and heavy armor has resulted in formidable floating tanks known as AATs. These assault tanks form the frontline of Trade Federation armored infantry divisions, as well as Separatist forces during the Clone Wars. A crew of battle droids drives the battle tank and operates the array of laser and projectile weaponry carried by the vehicle.",
+      "id": 1
+    },
+    {
+      "photo": "xwing.jpeg",
+      "nom": "X-Wing",
+      "dimension": "24.9m",
+      "lightSpeed": "false",
+      "nbPassenger": "32",
+      "description": "The Incom T-70 X-wing is the signature combat craft of the Resistance’s Starfighter Corps. Faster than the Alliance-era T-65s, Resistance X-wings are maneuverable enough to engage TIE fighters in dogfights, yet still hold considerable firepower. The credit-strapped Resistance relies on X-wings donated or lent by sympathetic New Republic senators and local security forces. Poe Dameron flew a customized, dark-hulled X-wing called Black One.",
+      "id": 2
+    },
+    {
+      "photo": "yming.JPG",
+      "nom": "Y-Wing",
+      "dimension": "35.9m",
+      "lightSpeed": "non",
+      "nbPassenger": "32",
+      "description": "The Y-wing is a workhorse starfighter has been in use since the Clone Wars. Used for dogfights and for bombing runs against capital ships and ground targets, Y-wings are often overshadowed by newer models such as the X-wing and the A-wing. But the Y-wing's historical importance is remarkable, and it has reliably served multiple generations of star pilots.",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "photo": "tie-defender.jpeg",
+      "nom": "Tie Defender",
+      "dimension": "5.7m",
+      "lightSpeed": "oui",
+      "nbPassenger": "9",
+      "description": "The TIE defender is an experimental fighter of the TIE series, armed with heavy cannons and shields, and is equipped with a hyperdrive. A major weapon for the Empire, the TIE defender proves much more difficult to destroy than standard TIE fighters."
+    },
+    {
+      "id": 5,
+      "photo": "geonosian.jpeg",
+      "nom": "Geonosian Fighter",
+      "dimension": "9.8m",
+      "lightSpeed": "oui",
+      "nbPassenger": "43",
+      "description": "These nimble, needle-nosed fighters were in use by the Geonosians through the Clone Wars in defense of their droid foundries. They worked as well in atmosphere as they did in space and offered 360-degree fields of view for the pilots who were situated in the flight on the top of the ship. In between the “needle-noses” was a laser cannon capable of firing purple laser bursts in a variety of angles"
+    },
+    {
+      "id": 6,
+      "photo": "gungan.jpeg",
+      "nom": "Gungan Bongo Submarine",
+      "dimension": "15m",
+      "lightSpeed": "oui",
+      "nbPassenger": "18",
+      "description": "Though the Gungans are naturally powerful swimmers, they do rely on submersible vehicles to travel the depths of Naboo's waters. One of their most striking technological achievements is the Gungan bongo submarine. Sporting the distinctive organic lines of Gungan technology, the bongo's manta-shaped hull is organically grown through secret Gungan techniques. Hydrostatic bubble shields keep the cockpit and cargo areas dry and filled with air. A semi-rigid assembly of tentacle-like fins spins to provide the bongo with thrust. From a distance, the bongo resembles an exotic Naboo squid or similar creature of the deep."
+    }
+  ]
+}

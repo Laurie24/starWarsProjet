@@ -11,17 +11,23 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EditVaisseauComponent implements OnInit {
   vaisseau: Vaisseau;
+  isLoading: boolean;
   constructor(private activatedRoute: ActivatedRoute, private vaisseauService: VaisseauService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    this.isLoading = true;
     const id = +this.activatedRoute.snapshot.paramMap.get('id');
-    this.vaisseau = this.vaisseauService.getOneVehiculById(id);
+    this.vaisseauService.getOneVehiculById(id).subscribe((data: Vaisseau) => {
+      this.vaisseau = data;
+      this.isLoading = false;
+    });
   }
 
   editVaisseau(){
-    this.vaisseauService.edit(this.vaisseau);
-    this.router.navigate(['/vaisseaux']);
-    this.toastr.success('Le vaisseau a bien été éditée!', 'Succès!');
+    this.vaisseauService.edit(this.vaisseau).subscribe(then => {
+      this.router.navigate(['/vaisseaux']);
+      this.toastr.success('Le vaisseau a bien été édité!', 'Succès!');
+    });
   }
 
 }

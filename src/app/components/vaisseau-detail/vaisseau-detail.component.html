@@ -1,16 +1,22 @@
-<h1>Bienvenue sur {{ vehicul.nom }}</h1>
+<ng-container *ngIf="!isLoading">
+  <h1>Bienvenue sur {{ vehicul.nom }}</h1>
 
-<div class="row justify-content-center">
-  <div class="card " style="width: 50rem;">
+  <div class="row justify-content-center">
+    <div class="card " style="width: 50rem;">
 
-    <div class="card-body">
-      <img src="assets/images/{{vehicul.photo}}" width="350px">
-      <br>
-      <p>Dimension : {{vehicul.dimension}}</p>
-      <p>Plus rapide que la lumière : {{ vehicul.lightSpeed?'Oui':'Non' }}</p>
-      <p>Nombre de passagers : {{ vehicul.nbPassenger }}</p>
-      <p>Description : {{vehicul.description}}</p>
+      <div class="card-body">
+        <img src="assets/images/{{vehicul.photo}}" width="100%">
+        <br>
+        <p>Dimension : {{vehicul.dimension}}</p>
+        <p>Plus rapide que la lumière : {{ vehicul.lightSpeed?'Oui':'Non' }}</p>
+        <p>Nombre de passagers : {{ vehicul.nbPassenger }}</p>
+        <p>Description : {{vehicul.description}}</p>
+      </div>
     </div>
   </div>
-</div>
+</ng-container>
+<ng-container *ngIf="isLoading">
+  <div>Chargement en cours</div>
+</ng-container>
+
 

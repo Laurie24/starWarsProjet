@@ -1,9 +1,43 @@
-.table{
+/*.table{
   background-color: black;
+  color: #edc472;
+}*/
+h4{
   color: #edc472;
 }
 
 p{
   color: #edc472;
 }
+
+.card{
+  background-color: black;
+  border: 2px solid #edc472;
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+hr{
+  color: #edc472;
+  width: 15px;
+}
+
+.btn{
+  background-color: black;
+  border: #edc472 1px solid;
+  margin: .5rem;
+}
+
+.add{
+  text-align: center;
+}
+
+.row{
+  justify-content: center;
+}
+
+
+
+
 

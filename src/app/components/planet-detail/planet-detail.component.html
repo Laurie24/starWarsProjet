@@ -1,18 +1,25 @@
-<h1>Bienvenue sur {{ planet.nom }}</h1>
 
-<div class="row justify-content-center">
-  <div class="card " style="width: 50rem;">
+<ng-container *ngIf="!isLoading">
+  <h1>Bienvenue sur {{ planet.nom }}</h1>
+  <div class="row justify-content-center">
+    <div class="card " style="width: 50rem;">
 
-    <div class="card-body">
-      <img src="assets/images/{{planet.photo}}" width="350px">
-      <br>
-      <p>Nombre d'habitant : {{planet.nbHabitant}}</p>
-      <p>Allegiance : {{planet.allegiance}}</p>
-      <p>Nombre de km depuis la terre : {{planet.nbKmTerre}}</p>
-      <p>Description : {{planet.description}}</p>
+      <div class="card-body">
+        <img src="assets/images/{{planet.photo}}" width="100%">
+        <br>
+        <p>Nombre d'habitant : {{planet.nbHabitant}}</p>
+        <p>Allegiance : {{planet.allegiance}}</p>
+        <p>Nombre de km depuis la terre : {{planet.nbKmTerre}}</p>
+        <p>Description : {{planet.description}}</p>
+      </div>
     </div>
   </div>
-</div>
+</ng-container>
+
+<ng-container *ngIf="isLoading">
+  <div>Chargement en cours...</div>
+</ng-container>
+
 
 
 

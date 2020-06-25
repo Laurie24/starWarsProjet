@@ -1,4 +1,39 @@
-<h1>Mes vaisseaux</h1>
+<ng-container *ngIf="!isLoading">
+  <h1>Mes vaisseaux</h1>
+
+  <div class="add">
+    <a class="btn" routerLink="/vaisseaux/add">Ajouter un vaisseau</a>
+  </div>
+
+  <div class="liste row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+    <div *ngFor="let vaisseau of this.vaisseaux" class="card" style="width: 25rem;">
+      <a [routerLink]="['/planet', vaisseau.id]"> <img src='../../../assets/images/{{vaisseau.photo}}' class="card-img-top" alt=""></a>
+      <div class="card-body">
+        <h4>{{vaisseau.nom}}</h4>
+        <p class="card-text"><span class="font-weight-bold">Dimension :</span> {{vaisseau.dimension}} </p>
+        <p class="card-text"><span class="font-weight-bold"> Plus rapide que la lumière :</span> {{vaisseau.lightSpeed?'oui':'non'}} </p>
+        <p class="card-text"><span class="font-weight-bold"> Nombre de passagers :</span> {{vaisseau.nbPassenger}} </p>
+        <hr>
+        <a class="btn" [routerLink]="['/vaisseaux', vaisseau.id]">Détails du vaisseau</a>
+        <br>
+        <a class="btn" style="color: #edc472; cursor: pointer" (click)="deleteVaisseau(vaisseau)">Supprimer {{vaisseau.nom}}</a>
+        <br>
+        <a class="btn" [routerLink]="['/vaisseaux/update', vaisseau.id]">Modifier {{vaisseau.nom}} </a>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="isLoading">
+  <div>Chargement en cours</div>
+</ng-container>
+
+
+
+
+
+
+  <!--################# Avec Tableau
 <div class="container">
   <a routerLink="/vaisseaux/add">Ajouter un vaisseau</a>
   <table class="table">
@@ -23,6 +58,6 @@
     </tr>
     </tbody>
   </table>
-</div>
+</div> -->
 
 

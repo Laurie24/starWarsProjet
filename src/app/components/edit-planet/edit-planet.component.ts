@@ -11,16 +11,22 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class EditPlanetComponent implements OnInit {
   planet: Planet;
+  isLoading: boolean;
   constructor(private activatedRoute: ActivatedRoute, private planetService: PlanetService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    this.isLoading = true;
     const id = +this.activatedRoute.snapshot.paramMap.get('id');
-    this.planet = this.planetService.getOnePlanetById(id);
+    this.planetService.getOnePlanetById(id).subscribe((data: Planet) => {
+      this.planet = data;
+      this.isLoading = false;
+    });
   }
 
   editPlanet(){
-    this.planetService.edit(this.planet);
-    this.router.navigate(['/planets']);
+    this.planetService.edit(this.planet).subscribe(then => {
+      this.router.navigate(['/planets']);
+    });
     this.toastr.success('La planète a bien été éditée!', 'Succès!');
   }
 }

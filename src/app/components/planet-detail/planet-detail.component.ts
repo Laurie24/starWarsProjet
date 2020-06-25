@@ -11,11 +11,15 @@ import {PlanetService} from '../../services/planet.service';
 export class PlanetDetailComponent implements OnInit {
   id: number;
   planet: Planet;
+  isLoading: boolean;
   constructor(private route: ActivatedRoute, private planetService: PlanetService) { }
 
-  ngOnInit(): void {
-    this.id = +this.route.snapshot.paramMap.get('id');
-    this.planet = this.planetService.getOnePlanetById(this.id);
+  ngOnInit(){
+    this.isLoading = true;
+    this.planetService.getOnePlanetById(+this.route.snapshot.paramMap.get('id')).subscribe((data: Planet) => {
+      this.planet = data;
+      this.isLoading = false;
+    });
   }
 
 }

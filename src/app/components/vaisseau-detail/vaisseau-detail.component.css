@@ -5,4 +5,5 @@ p{
 .card{
   background-color: black;
   border: 2px solid #edc472;
+  margin-bottom: 3rem;
 }
